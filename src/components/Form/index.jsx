@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import styles from "./Form.module.css";
+
 
 export default function Form({ jogadorList, setJogadorList }) {
   const [formData, setFormData] = useState({
@@ -34,7 +36,7 @@ export default function Form({ jogadorList, setJogadorList }) {
 
   return (
     <section className={styles.formContent}>
-      <h1>Placar do jogo</h1>
+      <h1>Cadastrar Jogador</h1>
       <form className={styles.form} onSubmit={handleForm}>
         <div className={styles.input}>
           <div className={styles.campo}>
@@ -88,8 +90,8 @@ export default function Form({ jogadorList, setJogadorList }) {
           </div>
         </div>
 
-        <div className={styles.button}>
-          <button>Criar jogador</button>
+        <div className={styles.Containerbutton}>
+          <button className={styles.button}>Criar jogador</button>
         </div>
       </form>
     </section>

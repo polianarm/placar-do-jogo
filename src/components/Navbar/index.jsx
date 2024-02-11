@@ -6,7 +6,13 @@ export default function Navbar() {
 
 return (
 
-<h2>Aqui tem um navbar</h2>
+    <header className={styles.Navbar}>
+    <h2>Placar do Jogo</h2>
+    <nav className={styles.nav}>
+      <a href="#">HOME</a>
+      <a href="#ranking">Ranking</a>
+    </nav>
+  </header>
 
 
 )

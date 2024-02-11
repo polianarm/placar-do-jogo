@@ -1,0 +1,43 @@
+.Navbar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(128, 128, 128, 0.271);
+    padding: 0.8rem;
+  }
+  
+  .Navbar h2 {
+    font-weight: 500;
+    display: flex;
+    justify-content: start;
+    font-size: 1.6rem;
+    color: #2a4808;
+    margin-left: 1rem;
+  }
+  
+  .nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: end;
+    text-decoration: none;
+    list-style: none;
+    gap: 1rem;
+    margin: 0 1rem;
+  }
+  
+  .nav a {
+    color: #2a4808;
+    border: none;
+    background-color: #17460500;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin: 0 1rem;
+  }
+  
+  @media screen and (max-width: 600px) {
+    header h2 {
+      font-size: 1.4rem;
+    }
+  }
