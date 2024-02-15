@@ -4,7 +4,8 @@ import styles from "./Table.module.css";
 
 export default function Table({ jogadorList, setJogadorList }) {
   const removeAll = () => {
-    localStorage.removeItem("jogadores");
+    localStorage.clear(); 
+    // localStorage.removeItem("jogadores");
     setJogadorList([]);
   };
 
@@ -17,15 +18,16 @@ export default function Table({ jogadorList, setJogadorList }) {
   };
 
   return (
-    <div className={styles.table}>
-      <table>
+    <div className={styles.tableContainer}>
+      <table className={styles.table}>
         <thead>
           <tr>
-            <tr>Nome</tr>
-            <tr>Sobrenome</tr>
-            <tr>Pontuação</tr>
-            <tr>Time</tr>
-            <tr>Estado</tr>
+            <th>Nome</th>
+            <th>Sobrenome</th>
+            <th>Pontuação</th>
+            <th>Time</th>
+            <th>Estado</th>
+            <th>Ação</th>
           </tr>
         </thead>
 
@@ -51,7 +53,7 @@ export default function Table({ jogadorList, setJogadorList }) {
       </table>
 
       <div>
-        <button onClick={removeAll}>Limpar</button>
+        <button className={styles.buttonClear} onClick={removeAll}>Limpar</button>
       </div>
     </div>
   );
