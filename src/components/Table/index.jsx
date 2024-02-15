@@ -4,8 +4,7 @@ import styles from "./Table.module.css";
 
 export default function Table({ jogadorList, setJogadorList }) {
   const removeAll = () => {
-    localStorage.clear(); 
-    // localStorage.removeItem("jogadores");
+    localStorage.removeItem("jogadores");
     setJogadorList([]);
   };
 
