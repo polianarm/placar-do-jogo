@@ -23,7 +23,7 @@ export default function Form({ jogadorList, setJogadorList }) {
   //o chat gpt disse que o código abaixo é redundante
 
   const handleForm = () => {
-    const jogadoresArray = [jogadorList, formData];
+    const jogadoresArray = [...jogadorList, formData];
     setJogadorList(jogadorList);
 
     localStorage.setItem("jogadores", JSON.stringify(jogadoresArray));
