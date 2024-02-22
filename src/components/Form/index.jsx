@@ -2,7 +2,6 @@
 import { useState } from "react";
 import styles from "./Form.module.css";
 
-
 export default function Form({ jogadorList, setJogadorList }) {
   
   const [formErros, setFormErrors] = useState({});
@@ -24,28 +23,29 @@ export default function Form({ jogadorList, setJogadorList }) {
 
   const handleForm = (e) => {
 
-    e.preventDefault()
+      if(validForm()) {
 
-    if(!validForm()) {
+      const jogadoresArray = [...jogadorList, formData];
+      setJogadorList(jogadorList);
+  
+      localStorage.setItem("jogadores", JSON.stringify(jogadoresArray));
+  
+      setFormData({
+        nome: "",
+        sobrenome: "",
+        score: "",
+        time: "",
+        estado: "",
+      });
 
-      return;
     }
 
-    const jogadoresArray = [...jogadorList, formData];
-    setJogadorList(jogadorList);
+    else {
+      e.preventDefault()
+    }
 
-    localStorage.setItem("jogadores", JSON.stringify(jogadoresArray));
-
-    setFormData({
-      nome: "",
-      sobrenome: "",
-      score: "",
-      time: "",
-      estado: "",
-    });
   };
 
-//nome, sobrenome, score, time, estado
   const validForm = () => {
     let errors = {};
 
@@ -123,7 +123,7 @@ export default function Form({ jogadorList, setJogadorList }) {
              {formErros.time && <span>{formErros.time}</span>}
           </div>
 
-          <div className={formErros.estado ? `${styles.campo} ${styles.error}` : '${styles.campo}'}>
+          <div className={formErros.estado ? `${styles.campo} ${styles.error}` : `${styles.campo}`}>
             <label>Estado</label>
             <input
               name="estado"
