@@ -41,6 +41,19 @@ margin-top: 0.2rem;
 height: 2rem;
 padding: 0.5rem;
 
+
+}
+
+.campo.error input {
+  border: 2px solid rgb(158, 4, 4);
+  background-color: rgba(255, 0, 0, 0.191);
+}
+
+
+.campo.error span {
+  color: rgb(158, 4, 4);
+  font-size: 14px;
+  margin-top: 0.4rem;
 }
 
 .button {
